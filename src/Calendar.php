@@ -31,12 +31,14 @@ class Calendar
      * @var array
      */
     protected $defaultOptions = [
-        'header' => [
+        'initialView' => 'dayGridMonth',
+        'height' => 'auto',
+        'headerToolbar' => [
             'left' => 'prev,next today',
             'center' => 'title',
-            'right' => 'month,agendaWeek,agendaDay',
+            'right' => 'dayGridMonth,dayGridWeek,listWeek',
         ],
-        'eventLimit' => true,
+        'dayMaxEventRows' => true,
     ];
 
     /**
@@ -124,7 +126,7 @@ class Calendar
      */
     public function getId()
     {
-        if (! empty($this->id)) {
+        if (!empty($this->id)) {
             return $this->id;
         }
 
